@@ -1,0 +1,3 @@
+Buzzards,5.58
+Hurricanes,5.174999999999999
+Dazzlers,3.725

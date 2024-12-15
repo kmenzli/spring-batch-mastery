@@ -1,0 +1,35 @@
+version: "3.7"
+services:
+  mysql:
+    image: mysql:8.0
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    volumes:
+      - mysql-batch-data:/var/lib/mysql
+    environment:
+      MYSQL_DATABASE: 'spring-batch'
+      MYSQL_ROOT_PASSWORD: secret
+    ports:
+      # <Port exposed> : < MySQL Port running inside container>
+      - '3306:3306'
+    expose:
+      # Opens port 3306 on the container
+      - '3306'
+  potgres:
+    image: postgres:14-alpine
+    restart: always
+    volumes:
+      - postgres-batch-data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: 'secret'
+      POSTGRES_USER: 'root'
+      POSTGRES_DB: 'business'
+    ports:
+      # <Port exposed> : < MySQL Port running inside container>
+      - '5432:5432'
+    expose:
+      # Opens port 3306 on the container
+      - '5432'    
+volumes:
+  mysql-batch-data:
+  postgres-batch-data:
