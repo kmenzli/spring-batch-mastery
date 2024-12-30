@@ -23,7 +23,7 @@ services:
     environment:
       POSTGRES_PASSWORD: 'secret'
       POSTGRES_USER: 'root'
-      POSTGRES_DB: 'business'
+      POSTGRES_DB: 'university'
     ports:
       # <Port exposed> : < MySQL Port running inside container>
       - '5432:5432'

@@ -1,0 +1,30 @@
+La procédure de migration de la DB Postgres vers Mysql se fait Table par table (on commence par la table student)
+    a) Lancer les containers docker pour Mysql & Postgres
+        i) Ceci créer 2 databases
+            - Mysql ==> spring-batch : pour les tables spring batch
+            - Postgres ==> university : pour mettre les tables et les datas à migrer
+    b) connecter sur le container mysql pour créer la DB cible "university"
+       i) CLI : docker exec -it {ContainerID} sh
+       ii) Se connect sur MySQL : mysql -u root -p
+        iii) Créer la DB  : CREATE DATABASE university;
+        iv) Switch sur la DB university : USE university;
+       v) CLI : à partir de Container exécuter le script de création de la table student  : src/main/resources/mysql/university-mysql/university_student.sql
+                . docker exec -i {ContainerID} mysql -u root -psecret --database=spring-batch < university_department.sql
+                . docker exec -i {ContainerID} mysql -u root -psecret --database=spring-batch < university_student.sql
+                . docker exec -i {ContainerID} mysql -u root -psecret --database=spring-batch < university_subjects_learning.sql
+                .
+       vi) Voir les tables créer : SHOW TABLES;
+    c) Importer les tables & les données dans Postgres :
+         i) Import Data dans le container
+                --> docker exec -i ${CONTAINER_NAME} pg_restore --verbose --clean --no-acl --no-owner -U ${USER} -d ${DATABASE} < /src/main/resources/postgres/university.sql
+         ii) Vérification des données importées
+                i) Connect sur DockerContainer
+                ii) Connecter sur Postgres
+                        --> psql -d university -U root
+                iii) Afficher la liste des Database ;
+                        --> \l
+                iv) Afficher les tables dans une Database
+                        --> \dt;
+Peupler une DB Mysql à partir d'un fichier :
+    . docker exec -i 01de4b24e921 mysql -u root -psecret --database=spring-batch < student.sql
+

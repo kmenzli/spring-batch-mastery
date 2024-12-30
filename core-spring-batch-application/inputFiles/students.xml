@@ -1,55 +1,55 @@
 <students>
     <student>
         <id>1</id>
-        <firstName>john</firstName>
+        <f_name>john</f_name>
         <lastName>smith</lastName>
         <email>john@gmail.com</email>
     </student>
     <student>
         <id>2</id>
-        <firstName>khemais</firstName>
+        <f_name>khemais</f_name>
         <lastName>smith</lastName>
         <email>john@gmail.com</email>
     </student>
     <student>
         <id>3</id>
-        <firstName>abdo</firstName>
+        <f_name>abdo</f_name>
         <lastName>smith</lastName>
         <email>john@gmail.com</email>
     </student>
     <student>
         <id>4</id>
-        <firstName>youssef</firstName>
+        <f_name>youssef</f_name>
         <lastName>smith</lastName>
         <email>john@gmail.com</email>
     </student>
     <student>
         <id>5</id>
-        <firstName>assil</firstName>
+        <f_name>assil</f_name>
         <lastName>smith</lastName>
         <email>john@gmail.com</email>
     </student>
     <student>
         <id>6</id>
-        <firstName>osswa</firstName>
+        <f_name>osswa</f_name>
         <lastName>smith</lastName>
         <email>john@gmail.com</email>
     </student>
     <student>
         <id>7</id>
-        <firstName>narmine</firstName>
+        <f_name>narmine</f_name>
         <lastName>smith</lastName>
         <email>john@gmail.com</email>
     </student>
     <student>
         <id>8</id>
-        <firstName>nour</firstName>
+        <f_name>nour</f_name>
         <lastName>smith</lastName>
         <email>john@gmail.com</email>
     </student>
     <student>
         <id>9</id>
-        <firstName>rabeb</firstName>
+        <f_name>rabeb</f_name>
         <lastName>smith</lastName>
         <email>john@gmail.com</email>
     </student>
